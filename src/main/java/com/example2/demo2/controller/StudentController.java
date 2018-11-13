@@ -1,6 +1,7 @@
 package com.example2.demo2.controller;
 
 
+import com.example2.demo2.Demo2Application;
 import com.example2.demo2.dao.StudentDao;
 import com.example2.demo2.service.StudentService;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,6 +26,10 @@ public class StudentController {
         System.out.println("поиск данных");
         return
                 studentService.findAll();
+    }
+    @GetMapping("/stop")
+    public void shutdownServer(){
+        System.exit(0);
     }
 
 
