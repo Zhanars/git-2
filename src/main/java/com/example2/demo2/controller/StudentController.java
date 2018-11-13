@@ -1,13 +1,11 @@
 package com.example2.demo2.controller;
 
 
-import com.example2.demo2.Demo2Application;
-import com.example2.demo2.dao.StudentDao;
-import com.example2.demo2.service.StudentService;
+import com.example2.demo2.model.StudentModel;
+import com.example2.demo2.service.StudentDao;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.List;
 
@@ -15,18 +13,18 @@ import java.util.List;
 @RequestMapping("/get")
 public class StudentController {
 
-    private StudentService studentService;
+    private StudentDao studentDaoService;
 
-    public StudentController(StudentService studentService) {
+    public StudentController(StudentDao studentDaoService) {
 
-        this.studentService = studentService;
+        this.studentDaoService = studentDaoService;
     }
 
     @GetMapping("/text")
-    public List<StudentDao> getAll(){
+    public List<StudentModel> getAll(){
         System.out.println("поиск данных");
         return
-                studentService.findAll();
+                studentDaoService.findAll();
     }
     @GetMapping("/stop")
     public void shutdownServer(){
@@ -35,7 +33,7 @@ public class StudentController {
 
     @GetMapping("/update")
     public void updateText() {
-        studentService.update();
+        studentDaoService.update();
     }
 
 }

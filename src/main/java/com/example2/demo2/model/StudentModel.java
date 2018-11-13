@@ -1,6 +1,6 @@
-package com.example2.demo2.dao;
+package com.example2.demo2.model;
 
-public class StudentDao {
+public class StudentModel {
 private int id;
 private String text;
 

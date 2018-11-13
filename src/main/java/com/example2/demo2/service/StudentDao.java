@@ -1,6 +1,6 @@
 package com.example2.demo2.service;
 
-import com.example2.demo2.dao.StudentDao;
+import com.example2.demo2.model.StudentModel;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
@@ -8,13 +8,16 @@ import org.apache.ibatis.annotations.Update;
 import java.util.List;
 
 @Mapper
-public interface StudentService {
+public interface StudentDao {
 
 
     @Select("select * from student")
-    List<StudentDao> findAll();
+    List<StudentModel> findAll();
 
     @Update("Update student set TEXT='Sample Text' where id=1")
-    List<StudentDao> update();
+    List<StudentModel> update();
 
+
+    @Select("select * from student where id = #{id}")
+    StudentModel findById(int id);
 }
