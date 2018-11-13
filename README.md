@@ -16,6 +16,7 @@ H2
 Чтобы запустить этот проект локально введите следующие команды:
 
         git clone https://github.com/Zhanars/git-2.git
+        cd git-2
         mvn spring-boot:run   
 
 Доступ со следующим URL-адресом:
