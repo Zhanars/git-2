@@ -7,6 +7,7 @@ import com.example2.demo2.service.StudentService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.List;
 
@@ -32,5 +33,9 @@ public class StudentController {
         System.exit(0);
     }
 
+    @GetMapping("/update")
+    public void updateText() {
+        studentService.update();
+    }
 
 }

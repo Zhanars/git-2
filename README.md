@@ -42,6 +42,9 @@ Maven автоматизации сборки проектов.
         JDBC URL: jdbc:h2:mem:testdb
         User Name: sa
 
+Для изменения слова "Hello world" на "Sample Text" выполняем
+
+        Update student set TEXT='Sample Text' where id=1
 
 ОСТАНОВКА СЕРВЕРА
 -----------
